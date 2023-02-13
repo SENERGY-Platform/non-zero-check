@@ -1,4 +1,4 @@
-# operator-multiplier
+# non-zero-check
 
 Takes two values as input and checks whether they are all zero. Sets the timestamp to the one from the last message
 
