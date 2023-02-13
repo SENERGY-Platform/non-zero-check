@@ -67,6 +67,9 @@ public class NonZeroCheck extends BaseOperator {
         if (anomaly_check == true && quantile_check == true) {
             message.output("value", (int) 1);
         }
+        else {
+            message.output("value", (int) 0);
+        }
 
         if (debug) {
             for (Map.Entry<String, Double> entr: map1.entrySet()) {
