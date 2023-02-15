@@ -65,10 +65,10 @@ public class NonZeroCheck extends BaseOperator {
         
 
         if (anomaly_check == true && quantile_check == true) {
-            message.output("value", (int) 1);
+            message.output("value", (double) 1);
         }
         else {
-            message.output("value", (int) 0);
+            message.output("value", (double) 0);
         }
 
         if (debug) {
