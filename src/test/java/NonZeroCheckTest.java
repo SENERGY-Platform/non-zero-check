@@ -13,7 +13,7 @@ import org.junit.Test;
 
 public class NonZeroCheckTest {
     @Test
-    public void productTest() throws Exception {
+    public void NonZeroTest() throws Exception {
         Config config = new Config(new JSONHelper().parseFile("config.json").toString());
         JSONArray messages = new JSONHelper().parseFile("messages.json");
         String topicName = config.getInputTopicsConfigs().get(0).getName();
@@ -30,7 +30,7 @@ public class NonZeroCheckTest {
             model.putMessage(topicName, Helper.deviceToInputMessageModel(deviceMessageModel, topicName));
             message.setMessage(model);
             testOperator.run(message);
-            Assert.assertEquals(message.getInput("expectValue").getValue(), message.getMessage().getOutputMessage().getAnalytics().get("product"));
+            Assert.assertEquals(message.getInput("expectValue").getValue(), message.getMessage().getOutputMessage().getAnalytics().get("value"));
             Assert.assertEquals(message.getInput("expectTS").getString(), message.getMessage().getOutputMessage().getAnalytics().get("lastTimestamp"));
         }
     }
