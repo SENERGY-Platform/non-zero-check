@@ -5,8 +5,30 @@
       "reading": {
         "value1": 3,
         "timestamp": "1971-01-10T00:00:00+02:00",
-        "expectValue": 1,
+        "expectValue": 0,
         "expectTS": "1971-01-10T00:00:00+02:00"
+      }
+    }
+  },
+  {
+    "device_id": "2",
+    "value": {
+      "reading": {
+        "value2": 0,
+        "timestamp": "1971-01-10T00:01:00+02:00",
+        "expectValue": 0,
+        "expectTS": "1971-01-10T00:01:00+02:00"
+      }
+    }
+  },
+  {
+    "device_id": "2",
+    "value": {
+      "reading": {
+        "value2": 6,
+        "timestamp": "1971-01-10T00:02:00+02:00",
+        "expectValue": 1,
+        "expectTS": "1971-01-10T00:02:00+02:00"
       }
     }
   },
@@ -26,8 +48,19 @@
     "value": {
       "reading": {
         "value1": 6,
-        "timestamp": "1971-01-10T00:05:00+02:00",
+        "timestamp": "1971-01-10T00:04:00+02:00",
         "expectValue": 1,
+        "expectTS": "1971-01-10T00:04:00+02:00"
+      }
+    }
+  },
+  {
+    "device_id": "1",
+    "value": {
+      "reading": {
+        "value2": 0,
+        "timestamp": "1971-01-10T00:05:00+02:00",
+        "expectValue": 0,
         "expectTS": "1971-01-10T00:05:00+02:00"
       }
     }
@@ -36,33 +69,11 @@
     "device_id": "1",
     "value": {
       "reading": {
-        "value2": 3,
-        "timestamp": "1971-01-10T00:00:00+02:00",
+        "value2": 40,
+        "timestamp": "1971-01-10T00:06:00+02:00",
         "expectValue": 1,
-        "expectTS": "1971-01-10T00:00:00+02:00"
+        "expectTS": "1971-01-10T00:06:00+02:00"
       }
     }
-  },
-  {
-    "device_id": "2",
-    "value": {
-      "reading": {
-        "value2": 0,
-        "timestamp": "1971-01-10T00:03:00+02:00",
-        "expectValue": 0,
-        "expectTS": "1971-01-10T00:03:00+02:00"
-      }
-    }
-  },
-  {
-    "device_id": "2",
-    "value": {
-      "reading": {
-        "value2": 6,
-        "timestamp": "1971-01-10T00:05:00+02:00",
-        "expectValue": 1,
-        "expectTS": "1971-01-10T00:05:00+02:00"
-      }
-    }
-  }
+  }  
 ]
