@@ -3,9 +3,9 @@
     "device_id": "1",
     "value": {
       "reading": {
-        "value": 0,
+        "value1": 3,
         "timestamp": "1971-01-10T00:00:00+02:00",
-        "expectValue": 0,
+        "expectValue": 1,
         "expectTS": "1971-01-10T00:00:00+02:00"
       }
     }
@@ -14,7 +14,7 @@
     "device_id": "2",
     "value": {
       "reading": {
-        "value": 0,
+        "value1": 0,
         "timestamp": "1971-01-10T00:03:00+02:00",
         "expectValue": 0,
         "expectTS": "1971-01-10T00:03:00+02:00"
@@ -22,10 +22,43 @@
     }
   },
   {
+    "device_id": "2",
+    "value": {
+      "reading": {
+        "value1": 6,
+        "timestamp": "1971-01-10T00:05:00+02:00",
+        "expectValue": 1,
+        "expectTS": "1971-01-10T00:05:00+02:00"
+      }
+    }
+  },
+  {
     "device_id": "1",
     "value": {
       "reading": {
-        "value": 6,
+        "value2": 3,
+        "timestamp": "1971-01-10T00:00:00+02:00",
+        "expectValue": 1,
+        "expectTS": "1971-01-10T00:00:00+02:00"
+      }
+    }
+  },
+  {
+    "device_id": "2",
+    "value": {
+      "reading": {
+        "value2": 0,
+        "timestamp": "1971-01-10T00:03:00+02:00",
+        "expectValue": 0,
+        "expectTS": "1971-01-10T00:03:00+02:00"
+      }
+    }
+  },
+  {
+    "device_id": "2",
+    "value": {
+      "reading": {
+        "value2": 6,
         "timestamp": "1971-01-10T00:05:00+02:00",
         "expectValue": 1,
         "expectTS": "1971-01-10T00:05:00+02:00"
