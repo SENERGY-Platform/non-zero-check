@@ -5,7 +5,7 @@
       "reading": {
         "value1": 3,
         "timestamp": "1971-01-10T00:00:00+02:00",
-        "expectValue": 0,
+        "expectValue": 1,
         "expectTS": "1971-01-10T00:00:00+02:00"
       }
     }
