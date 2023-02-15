@@ -10,8 +10,12 @@
       "FilterValue": "1,2",
       "Mappings": [
         {
-          "Dest": "value",
-          "Source": "value.reading.value"
+          "Dest": "value1",
+          "Source": "value.reading.value1"
+        },
+        {
+          "Dest": "value2",
+          "Source": "value.reading.value2"
         },
         {
           "Dest": "timestamp",
