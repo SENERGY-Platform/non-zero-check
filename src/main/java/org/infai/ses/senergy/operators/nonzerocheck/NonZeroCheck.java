@@ -78,7 +78,7 @@ public class NonZeroCheck extends BaseOperator {
             System.out.println((int) 1);
             try {
                 Files.writeString(
-                    Paths.get(".").toAbsolutePath().resolve("opt/data/results.txt"),
+                    Paths.get("./opt/data/results.txt"),
                     timestamp + " 1" + System.lineSeparator(),
                     StandardOpenOption.CREATE, StandardOpenOption.APPEND
                 );
@@ -91,7 +91,7 @@ public class NonZeroCheck extends BaseOperator {
             System.out.println((int) 0);
             try {
                 Files.writeString(
-                    Paths.get(".").toAbsolutePath().resolve("opt/data/results.txt"),
+                    Paths.get("./opt/data/results.txt"),
                     timestamp + " 0" + System.lineSeparator(),
                     StandardOpenOption.CREATE, StandardOpenOption.APPEND
                 );
