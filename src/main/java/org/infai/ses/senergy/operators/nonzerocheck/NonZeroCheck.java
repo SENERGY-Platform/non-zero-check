@@ -26,6 +26,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
+import java.io.*;
+
 
 public class NonZeroCheck extends BaseOperator {
 
@@ -38,6 +44,13 @@ public class NonZeroCheck extends BaseOperator {
         map2 = new HashMap<>();
         debug = Boolean.parseBoolean(Helper.getEnv("DEBUG", "false"));
     }
+    private static void write(final String s) throws java.io.IOException {
+        Files.writeString(
+            Paths.get(".").toAbsolutePath().resolve("opt/data/results.txt"),
+            s + System.lineSeparator(),
+            StandardOpenOption.CREATE, StandardOpenOption.APPEND
+        );
+    }
 
     @Override
     public void run(Message message) {
@@ -45,6 +58,9 @@ public class NonZeroCheck extends BaseOperator {
         FlexInput value2Input = message.getFlexInput("value2");
         FlexInput timeInput  = message.getFlexInput("timestamp");
         String timestamp;
+
+        new File("./opt/data").mkdirs();
+
         try {
             timestamp = timeInput.getString();
         } catch (NoValueException e) {
@@ -67,10 +83,20 @@ public class NonZeroCheck extends BaseOperator {
         if (anomaly_check == true && quantile_check == true) {
             message.output("value", (double) 1);
             System.out.println((int) 1);
+            try {
+                write(timestamp + "1");
+            }catch(IOException e) {
+                System.out.println("Couldn't write result!");
+            }
         }
         else {
             message.output("value", (double) 0);
             System.out.println((int) 0);
+            try {
+                write(timestamp + "0");
+            }catch(IOException e) {
+                System.out.println("Couldn't write result!");
+            }
         }
 
         if (debug) {
