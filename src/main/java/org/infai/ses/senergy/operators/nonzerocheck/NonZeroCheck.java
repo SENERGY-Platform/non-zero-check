@@ -44,13 +44,6 @@ public class NonZeroCheck extends BaseOperator {
         map2 = new HashMap<>();
         debug = Boolean.parseBoolean(Helper.getEnv("DEBUG", "false"));
     }
-    private static void write(final String s) throws java.io.IOException {
-        Files.writeString(
-            Paths.get(".").toAbsolutePath().resolve("opt/data/results.txt"),
-            s + System.lineSeparator(),
-            StandardOpenOption.CREATE, StandardOpenOption.APPEND
-        );
-    }
 
     @Override
     public void run(Message message) {
@@ -84,7 +77,11 @@ public class NonZeroCheck extends BaseOperator {
             message.output("value", (double) 1);
             System.out.println((int) 1);
             try {
-                write(timestamp + "1");
+                Files.writeString(
+                    Paths.get(".").toAbsolutePath().resolve("opt/data/results.txt"),
+                    timestamp + " 1" + System.lineSeparator(),
+                    StandardOpenOption.CREATE, StandardOpenOption.APPEND
+                );
             }catch(IOException e) {
                 System.out.println("Couldn't write result!");
             }
@@ -93,7 +90,11 @@ public class NonZeroCheck extends BaseOperator {
             message.output("value", (double) 0);
             System.out.println((int) 0);
             try {
-                write(timestamp + "0");
+                Files.writeString(
+                    Paths.get(".").toAbsolutePath().resolve("opt/data/results.txt"),
+                    timestamp + " 0" + System.lineSeparator(),
+                    StandardOpenOption.CREATE, StandardOpenOption.APPEND
+                );
             }catch(IOException e) {
                 System.out.println("Couldn't write result!");
             }
